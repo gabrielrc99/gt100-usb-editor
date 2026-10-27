@@ -1,0 +1,19 @@
+__pycache__/
+*.pyc
+*.log
+.venv/
+backups/
+
+# Local diagnostics, hardware captures and generated previews
+logs/
+artifacts/
+flashlib/
+
+# Local configuration and build output
+.env
+.env.*
+!.env.example
+.pytest_cache/
+build/
+dist/
+*.egg-info/
