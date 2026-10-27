@@ -1,0 +1,53 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:12.000
+From a cabinet IR to a GT-100 patch
+A WAV supplies the target frequency response. Pseudo IR finds cabinet and EQ settings the GT-100 can run on its own.
+
+00:00:12.000 --> 00:00:28.000
+Search complete cabinet configurations
+The fixed library contains 7 cabinets × 5 microphones × 2 axes × 11 positions. Each complete combination gets a volume-aligned score.
+
+00:00:28.000 --> 00:00:44.000
+Include CUSTOM cabinets and Color
+CUSTOM adds speaker size, speaker count and cabinet character. Low and High Color are experimental magnitude predictions, not new recordings.
+
+00:00:44.000 --> 00:01:04.000
+Expanded Color + EQ search
+Several promising bases are refined. CUSTOM Color and EQ are alternated, then the lowest full-band error with EQ + 2 FX selects one base for all four versions.
+
+00:01:04.000 --> 00:01:24.000
+Compare both EQ fitting priorities
+80 Hz–6 kHz and a focused 200 Hz–5 kHz strategy are tested. Auto chooses the lower full-band RMS at each level; Nerd Mode can compare either strategy.
+
+00:01:24.000 --> 00:01:40.000
+Start with the dedicated EQ
+Shelves, two parametric mid bands and low/high cuts reshape the cabinet response. Only settings available on the GT-100 are used.
+
+00:01:40.000 --> 00:01:56.000
+Add one FX, or use both
+One FX can be parametric or graphic. With two FX, the search compares P + P, P + G and G + P. All active EQs can be readjusted together.
+
+00:01:56.000 --> 00:02:14.000
+Choose the physical block order
+P means parametric; G means graphic. The dedicated EQ is P. Mixed chains test P > G > P, P > P > G and G > P > P, favoring lower intermediate gain.
+
+00:02:14.000 --> 00:02:30.000
+See what each EQ contributes
+Nerd Mode shows each block separately, including its LEVEL. Zero dB means no change; positive values boost and negative values cut.
+
+00:02:30.000 --> 00:02:50.000
+Choose your resource budget
+All four versions share the selected cabinet. More EQ blocks may improve the match, but occupy effects you could otherwise use in your patch.
+
+00:02:50.000 --> 00:03:10.000
+Prepare and compare guitar previews
+Connect the GT-100 and choose Preamp A or B. Prepare preview records the available guitar samples through that preamp, restores the patch, then enables comparison.
+
+00:03:10.000 --> 00:03:28.000
+Read the scores, then trust your ears
+Proximity measures volume-aligned spectral shape. A waveform null test is a separate, phase-sensitive audio diagnostic; it does not rank cabinet candidates.
+
+00:03:28.000 --> 00:03:44.000
+Apply the version you want to keep
+Choose the version, FX1 or FX2 when using one FX, and Preamp A or B. Apply updates the temporary patch. Use WRITE to keep it in the GT-100.

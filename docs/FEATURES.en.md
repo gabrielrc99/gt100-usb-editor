@@ -38,6 +38,14 @@ You can review the resources used and check the result before saving. Scenes dep
 
 Pseudo IR uses a **cabinet IR in WAV format as a reference** and searches for internal GT-100 settings that approximate its frequency response. This lets you save the configuration in a patch and use the processor without a computer.
 
+### Watch how it works
+
+**English · 3:44 · visual explanation, without narration.** The video covers fixed and CUSTOM cabinets, Color, expanded search, both EQ priorities, FX types and order, individual EQ contributions, guitar previews and the null test.
+
+https://github.com/user-attachments/assets/1e754c09-5605-4b4a-804e-ede91b7fbcee
+
+[Chapters and full explanation](pseudo-ir/en/README.md) · [Download MP4](pseudo-ir/en/how-it-works.mp4) · [English captions](pseudo-ir/en/captions.en.vtt)
+
 ### Import and compare
 
 1. Open the **Pseudo IR** page and add a WAV IR.
@@ -55,15 +63,19 @@ Each conversion offers four trade-offs between approximation and resource use:
 | Cabinet + EQ + 1 FX | Cabinet, EQ, and one FX configured as an equalizer |
 | Cabinet + EQ + 2 FX | Cabinet, EQ, and both FX blocks configured as equalizers |
 
-Using more EQs occupies blocks that you might want to reserve for other effects. With the one-FX version, you can choose **FX1** or **FX2**. The search can include **CUSTOM** cabinets and offers EQ fitting priorities.
+Using more EQs occupies blocks that you might want to reserve for other effects. With the one-FX version, you can choose **FX1** or **FX2**. FX blocks can use parametric or graphic EQ, with at most one graphic EQ. The search also compares mixed block orders to reduce predicted intermediate gain.
 
-Conversions are stored in a local library. Audio comparison lets you switch between the original IR and the predicted versions; nerd mode reveals more fitting details.
+The default search includes **CUSTOM cabinets**, experimental **Low/High Color** predictions, and **expanded Color + EQ search**. It refines several promising bases and selects one cabinet using the result with EQ + 2 FX; the four versions then share that base. Both **80 Hz–6 kHz** and **200 Hz–5 kHz** EQ fitting strategies are compared, with automatic selection by full-band error. **Nerd Mode** exposes these choices and each EQ's contribution for closer comparison.
+
+Use **Prepare preview** with the GT-100 connected and the selected patch preamp enabled. It prepares **Open Chords, Power Chords and Melody**, restoring the patch before listening and reusing valid cached previews. Compare the recorded preamp convolved with the original IR against recordings through the GT-100 cabinet and EQ blocks. You can switch versions, pause, loop and choose the playback output. Conversions are kept in your library for reuse.
 
 ### Interpreting the result
 
 The goal is to approximate the **magnitude of the frequency response** within the analyzed range. The proximity percentage compares spectral shape after aligning volume; it is not a percentage of sonic or perceptual fidelity.
 
-The GT-100 **does not load the WAV file or run IRs**. The patch uses its own cabinets and equalizers. Phase, time response, and the original IR's dynamic behavior are not fully reproduced. Computer playback is a prediction to help you choose; check the result with your guitar and output system. Pseudo IR remains under development.
+Nerd Mode also offers a **waveform null test** on prepared preview audio. This phase-sensitive residual is a separate diagnostic; it does not rank cabinet candidates or express a percentage of audible fidelity.
+
+The GT-100 **does not load the WAV file or run IRs**. The patch uses its own cabinets and equalizers. Phase, time response, and the original IR's dynamic behavior are not fully reproduced. The conversion curves remain magnitude predictions; check the result with your guitar and output system. Pseudo IR remains under development.
 
 ## Undo and redo
 

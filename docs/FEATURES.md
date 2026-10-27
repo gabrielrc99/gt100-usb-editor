@@ -38,6 +38,14 @@ Você pode revisar os recursos utilizados e conferir o resultado antes de salvar
 
 O Pseudo IR usa um **IR de gabinete em WAV como referência** e procura configurações internas da GT-100 que aproximem sua resposta de frequência. Isso permite levar a configuração para o patch sem depender de um computador durante o uso da pedaleira.
 
+### Veja como funciona
+
+**Vídeo em inglês · 3min44s · explicação visual, sem narração.** Mostra gabinetes fixos e CUSTOM, Color, busca ampliada, as duas prioridades de EQ, tipos e ordem dos FX, contribuição de cada EQ, prévias de guitarra e null test.
+
+https://github.com/user-attachments/assets/1e754c09-5605-4b4a-804e-ede91b7fbcee
+
+[Capítulos e explicação completa em inglês](pseudo-ir/en/README.md) · [Baixar MP4](pseudo-ir/en/how-it-works.mp4) · [Legendas em inglês](pseudo-ir/en/captions.en.vtt)
+
 ### Importar e comparar
 
 1. Abra a página **Pseudo IR** e adicione um IR em WAV.
@@ -55,15 +63,19 @@ Cada conversão oferece quatro compromissos entre aproximação e uso de recurso
 | Gabinete + EQ + 1 FX | Gabinete, EQ e um FX configurado como equalizador |
 | Gabinete + EQ + 2 FX | Gabinete, EQ e os dois FX configurados como equalizadores |
 
-Usar mais EQs ocupa blocos que você poderia reservar para outros efeitos. Na versão com um FX, é possível escolher **FX1** ou **FX2**. A busca pode incluir gabinetes **CUSTOM**, e oferece prioridades de ajuste de EQ.
+Usar mais EQs ocupa blocos que você poderia reservar para outros efeitos. Na versão com um FX, é possível escolher **FX1** ou **FX2**. Os FX podem usar EQ paramétrico ou gráfico, mantendo no máximo um gráfico. A busca também compara as ordens dos blocos mistos para reduzir a amplificação intermediária prevista.
 
-As conversões ficam em uma biblioteca local. A comparação por áudio permite alternar entre o IR original e as versões previstas; o modo nerd expõe mais informações sobre o ajuste.
+A busca padrão inclui **gabinetes CUSTOM**, previsões experimentais de **Color Low/High** e **busca ampliada de Color + EQ**. Ela refina várias bases promissoras e escolhe um gabinete pelo resultado com EQ + 2 FX; as quatro versões usam essa mesma base. As estratégias de EQ de **80 Hz–6 kHz** e **200 Hz–5 kHz** são comparadas, com seleção automática pelo erro global. O **Nerd Mode** expõe essas escolhas e a contribuição individual dos EQs para comparação.
+
+Use **Preparar prévia** com a GT-100 conectada e o preamp escolhido ligado. O editor prepara **Open Chords, Power Chords e Melody**, restaurando o patch antes da escuta e reutilizando prévias válidas do cache. Compare a gravação do preamp convolvida com o IR original com as gravações feitas pelos gabinetes e EQs da GT-100. É possível alternar versões, pausar, repetir em loop e escolher a saída de reprodução. As conversões ficam na biblioteca para reutilização.
 
 ### Como interpretar o resultado
 
 O objetivo é aproximar a **magnitude da resposta de frequência** dentro da faixa analisada. A porcentagem de proximidade compara a forma espectral após alinhar o volume; ela não é uma porcentagem de fidelidade sonora ou de percepção humana.
 
-A GT-100 **não passa a carregar o WAV nem a executar IRs**. O patch usa seus próprios gabinetes e equalizadores. Fase, resposta temporal e comportamento dinâmico de um IR original não são reproduzidos integralmente. A audição no computador é uma previsão para ajudar na escolha; confirme o resultado com sua guitarra e seu sistema de saída. O PseudoIR segue em desenvolvimento.
+O Nerd Mode também oferece um **null test de forma de onda** no áudio das prévias preparadas. Esse resíduo é sensível à fase e funciona como diagnóstico separado; ele não ordena os candidatos de gabinete nem representa uma porcentagem de fidelidade audível.
+
+A GT-100 **não passa a carregar o WAV nem a executar IRs**. O patch usa seus próprios gabinetes e equalizadores. Fase, resposta temporal e comportamento dinâmico de um IR original não são reproduzidos integralmente. As curvas da conversão continuam sendo previsões de magnitude; confirme o resultado com sua guitarra e seu sistema de saída. O PseudoIR segue em desenvolvimento.
 
 ## Desfazer e refazer edições
 
